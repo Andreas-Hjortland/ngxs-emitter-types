@@ -1,0 +1,32 @@
+p {
+  font-family: Lato;
+}
+li {
+  display: grid;
+  grid-template-areas: 
+    'header btn'
+    'content content';
+  grid-template-columns: 1fr auto;
+}
+li:nth-child(2n) {
+  background-color: rgba(0, 0, 0, .1);
+}
+li > h1 {
+  grid-area: header;
+  padding: 0;
+  margin: 0;
+}
+li > p {
+  grid-area: content;
+}
+li > button {
+  grid-area: btn;
+  align-self: center;
+}
+label {
+  display: block;
+}
+input,textarea {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+<hello name="{{ name }}"></hello>
+<p> 
+  Start editing to see some magic happen :)
+</p>
+
+<ng-container *ngIf="posts | async as posts">
+  <ul>
+    <li *ngFor="let post of posts">
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.content }}</p>
+      <button type="button" (click)="removePost(post)">Remove post</button>
+    </li>
+  </ul>
+</ng-container>
+
+<form (submit)="submit($event)" (keypress)="keydown($event)">
+  <label>
+    Title:
+    <input [(ngModel)]="title" name="title" autofocus required />
+  </label>
+
+  <label>
+    Content:
+    <textarea [(ngModel)]="content" name="content" required></textarea>
+  </label>
+
+  <button type="submit">Add post</button>
+</form>
